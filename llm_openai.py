@@ -51,7 +51,7 @@ class LLM_Chatbot:
         self.conversation = ConversationChain(
             llm = self.llm,
             verbose=False,
-            memory = ConversationBufferWindowMemory(k=5) #only looks back at the past 5 messages
+            memory = ConversationBufferWindowMemory(k=10) #only looks back at the past 5 messages
         )
         
     #function that retrieves the top k most similar contexts to a query from pinecone vector DB
